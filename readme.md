@@ -3,7 +3,8 @@ Data Wilayah Indonesia sesuai Permendagri No 56 Tahun 2015 dengan PHP+MySQL+AJaX
 
 ## Referensi
 - Kode dan Data Wilayah Administrasi Pemerintahan (Permendagri No.56-2015) www.kemendagri.go.id/pages/data-wilayah
-```php artisan bot:wilayah {startfrom:integer}
+```bash
+php artisan bot:wilayah {startfrom:integer}
 # startfrom = langkahi berapa baris untuk mulai grabbing db
 ```
 
