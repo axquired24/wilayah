@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
-        Commands\JsonConverter::class,
+        Commands\Geocoder::class,
         Commands\Wilayah::class,
     ];
 
