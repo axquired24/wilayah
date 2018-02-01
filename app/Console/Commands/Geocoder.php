@@ -15,6 +15,8 @@ class Geocoder extends Command
      * The name and signature of the console command.
      *
      * @var string
+     * @param apikey = Google ApiKey (New API will active after 10 Minutes
+     * `The provided API key is expired` will show if you try to access before 10 Minutes
      */
     protected $signature = 'bot:geocoder';
 
@@ -24,7 +26,7 @@ class Geocoder extends Command
      * @var string
      */
     protected $description = 'Get Lat,lng from given location';
-    protected $gmapkey = 'AIzaSyBJIYOyaSUgzPCyuslg2Gcp3GAN3XV6LPI';
+    protected $apikey = 'AIzaSyBJIYOyaSUgzPCyuslg2Gcp3GAN3XV6LPI';
 
     /**
      * Create a new command instance.
@@ -107,7 +109,7 @@ class Geocoder extends Command
 
     function geoCoder($namawilayah)
     {
-        $key = $this->gmapkey;
+        $key = $this->apikey;
         $uri = "https://maps.googleapis.com/maps/api/geocode/json?key=$key&address=$namawilayah";
         $client = new Client(); //GuzzleHttp\Client
         $result = $client->get($uri, [
