@@ -84,7 +84,11 @@ class Geocoder extends Command
             $geocoder = $this->geoCoder($namawilayah);
             $parsed = $this->parseResponse($geocoder);
 
-            if($parsed->status == "ZERO_RESULTS") {
+            if($parsed->status == "OVER_QUERY_LIMIT") {
+                $this->error("OVER_QUERY_LIMIT");
+                dump($parsed);
+                exit();
+            } elseif($parsed->status == "ZERO_RESULTS") {
                 $this->error("Coordinate Not Found.");
                 dump($parsed);
                 $this->markAsTracked($wilayah);
