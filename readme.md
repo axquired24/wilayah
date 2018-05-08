@@ -1,9 +1,24 @@
 # wilayah (Laravel Version)
 Data Wilayah Indonesia sesuai Permendagri No 56 Tahun 2015 dengan PHP+MySQL+AJaX
 
+
+## Requirement:
+- PHP >= 7.0
+- MySQL Server 5.5x
+- Composer
+
+## How to
+- Import `.sql`
+- Copy `.env.example` to `.env`, Config mysql db connection 
+- Run `composer install`
+
 ## Referensi
-- Kode dan Data Wilayah Administrasi Pemerintahan (Permendagri No.56-2015) www.kemendagri.go.id/pages/data-wilayah
+
 ```bash
+# Get lat, lng, postal code & path from google reverse geocode
+php artisan bot:geocoder
+
+# Kode dan Data Wilayah Administrasi Pemerintahan (Permendagri No.56-2015) www.kemendagri.go.id/pages/data-wilayah
 php artisan bot:wilayah {startfrom:integer}
 # startfrom = langkahi berapa baris untuk mulai grabbing db
 ```
